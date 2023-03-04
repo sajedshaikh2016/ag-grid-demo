@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AgGridModule } from 'ag-grid-angular';
 import { AppComponent } from './app.component';
 
+import 'ag-grid-enterprise';
+
 @NgModule({
   declarations: [
     AppComponent

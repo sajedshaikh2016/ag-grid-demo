@@ -13,15 +13,22 @@ export class AppComponent implements OnInit {
 
   // Each Column Definition results in one Column.
   public columnDefs: ColDef[] = [
-    { field: 'make' },
-    { field: 'model' },
-    { field: 'price' }
+    { field: 'country' },
+    { field: 'year' },
+    { field: 'athlete' },
+    { field: 'sport' },
+    { field: 'gold' },
+    { field: 'silver' },
+    { field: 'bronze' },
   ];
 
   // DefaultColDef sets props common to all Columns
   public defaultColDef: ColDef = {
+    flex: 1,
+    minWidth: 100,
     sortable: true,
-    filter: true,
+    resizable: true,
+    enableRowGroup: true
   };
 
   // Data that gets displayed in the grid
@@ -34,7 +41,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.rowData$ = this.http
-      .get<any[]>('https://www.ag-grid.com/example-assets/row-data.json');
+      .get<any[]>('https://www.ag-grid.com/example-assets/olympic-winners.json');
   }
 
   // Example of consuming Grid Event
